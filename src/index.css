@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-brass: #c9a24b;
+  --color-ink: #0e161e;
+  --color-orange-nl: #ff7a1a;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #0b1219;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(20, 30, 40, 0.78), rgba(12, 19, 26, 0.84));
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border: 1px solid rgba(201, 162, 75, 0.28);
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* floating exhibit labels (HTML overlay on the 3D scene) */
+.lm-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 12px 3px 3px;
+  border-radius: 999px;
+  background: rgba(14, 22, 30, 0.74);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(201, 162, 75, 0.6);
+  color: #f4efe2;
+  font: 600 12px/1 var(--font-sans);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  will-change: transform, opacity;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.lm-label::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 1px;
+  height: 16px;
+  background: linear-gradient(rgba(201, 162, 75, 0.9), rgba(201, 162, 75, 0));
+}
+.lm-label:hover,
+.lm-label.active {
+  background: rgba(201, 162, 75, 0.96);
+  color: #121b24;
+}
+.lm-num {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: #c9a24b;
+  color: #121b24;
+  font-size: 11px;
+  font-weight: 700;
+}
+.lm-label:hover .lm-num,
+.lm-label.active .lm-num {
+  background: #121b24;
+  color: #c9a24b;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fadeIn 0.8s ease both;
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: rgba(201, 162, 75, 0.35);
+  border-radius: 6px;
+}
+
+.kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom-width: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  font: 600 11px/1 var(--font-sans);
+  color: #f4efe2;
+}
