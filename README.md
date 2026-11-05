@@ -35,6 +35,7 @@ In addition to the main combined 3D exhibition, this repository includes individ
 - `Afsluitdijk/`
 - `artis/`
 - `Cubehouses/`
+- `Diergaarde Blijdorp/`
 - `Eastern Scheldt Barrier/`
 - `erasmus-bridge/`
 - `euromast/`
