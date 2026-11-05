@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --gold: #d9b24a;
+  --ink: #0d1813;
+  --cream: #efe7d2;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #0d1813;
+}
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+.font-display {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+.glass {
+  background: rgba(13, 24, 19, 0.58);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+}
+.glass-strong {
+  background: rgba(11, 20, 16, 0.78);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-slim::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-slim::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+}
+
+.artis-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.75rem 0.3rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(13, 24, 19, 0.62);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(217, 178, 74, 0.55);
+  color: #f4ecd6;
+  font: 600 12px/1 Inter, system-ui, sans-serif;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 0.25s, background 0.2s, color 0.2s;
+  will-change: transform;
+}
+.artis-label:hover {
+  background: rgba(217, 178, 74, 0.92);
+  color: #14201a;
+}
+.artis-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d9b24a;
+  box-shadow: 0 0 0 3px rgba(217, 178, 74, 0.25);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(217, 178, 74, 0.25); }
+  50% { box-shadow: 0 0 0 6px rgba(217, 178, 74, 0.05); }
+}

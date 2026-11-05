@@ -29,6 +29,22 @@ An interactive 3D spatial exhibition of iconic architectural and engineering lan
 - **Tailwind CSS v4**
 - **TypeScript**
 
+## Individual Landmark Projects
+
+In addition to the main combined 3D exhibition, this repository includes individual standalone landmark showcase projects:
+- `Afsluitdijk/`
+- `artis/`
+- `Cubehouses/`
+- `Eastern Scheldt Barrier/`
+- `erasmus-bridge/`
+- `euromast/`
+- `kinderdijk/`
+- `Kuekenhof/`
+- `Rijksmuseum/`
+- `VanGoghmuseum/`
+
+Each landmark folder can be run independently using `npm install` and `npm run dev`.
+
 ## Getting Started
 
 ### Prerequisites
